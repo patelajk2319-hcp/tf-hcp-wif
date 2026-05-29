@@ -1,0 +1,12 @@
+tfc_organization         = "my-org"
+nonprod_tfc_project_name = "REPLACE_ME_APPNAME-nonprod"
+prod_tfc_project_name    = "REPLACE_ME_APPNAME-prod"
+
+dev_project_id  = "REPLACE_ME_APPNAME-dev"
+test_project_id = "REPLACE_ME_APPNAME-test"
+qa_project_id   = "REPLACE_ME_APPNAME-qa"
+prod_project_id = "REPLACE_ME_APPNAME-prod"
+
+# Optional — defaults to storage.admin, cloudsql.admin, compute.admin
+# nonprod_roles = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]
+# prod_roles    = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]
