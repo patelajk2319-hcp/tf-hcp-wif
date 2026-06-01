@@ -22,10 +22,8 @@ module "gcp_identity" {
 module "github" {
   source = "../../modules/github"
 
-  app_name         = "app1"
-  repo_description = var.repo_description
-  repo_visibility     = var.repo_visibility
-  nonprod_team_slug   = var.nonprod_team_slug
+  app_name          = "app1"
+  nonprod_team_slug = var.nonprod_team_slug
   prod_team_slug      = var.prod_team_slug
 }
 

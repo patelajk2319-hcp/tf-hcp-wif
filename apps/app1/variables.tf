@@ -78,18 +78,6 @@ variable "github_organization" {
   type        = string
 }
 
-variable "repo_description" {
-  description = "Short description for the GitHub repository"
-  type        = string
-  default     = ""
-}
-
-variable "repo_visibility" {
-  description = "Repository visibility: internal, private, or public"
-  type        = string
-  default     = "internal"
-}
-
 variable "nonprod_team_slug" {
   description = "GitHub team slug granted push (write) access — typically your developers team"
   type        = string
