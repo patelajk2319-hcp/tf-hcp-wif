@@ -2,10 +2,11 @@
 module "gcp_identity" {
   source = "../../modules/gcp-identity"
 
-  app_name              = "REPLACE_ME_APPNAME"
-  wif_gcp_project_id    = var.wif_gcp_project_id
-  nonprod_wif_pool_name = var.nonprod_wif_pool_name
-  prod_wif_pool_name    = var.prod_wif_pool_name
+  app_name                = "REPLACE_ME_APPNAME"
+  terraform_sa_project_id = var.terraform_sa_project_id
+  wif_gcp_project_id      = var.wif_gcp_project_id
+  nonprod_wif_pool_name   = var.nonprod_wif_pool_name
+  prod_wif_pool_name      = var.prod_wif_pool_name
 
   dev_project_id  = var.dev_project_id
   test_project_id = var.test_project_id
@@ -21,9 +22,8 @@ module "gcp_identity" {
 module "github" {
   source = "../../modules/github"
 
-  app_name            = "REPLACE_ME_APPNAME"
-  github_organization = var.github_organization
-  repo_description    = var.repo_description
+  app_name         = "REPLACE_ME_APPNAME"
+  repo_description = var.repo_description
   repo_visibility     = var.repo_visibility
   nonprod_team_slug   = var.nonprod_team_slug
   prod_team_slug      = var.prod_team_slug

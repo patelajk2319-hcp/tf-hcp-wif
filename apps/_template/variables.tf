@@ -1,3 +1,8 @@
+variable "terraform_sa_project_id" {
+  description = "GCP project ID where the HCP Terraform agent service accounts are created (e.g. hcp-tf-sa)"
+  type        = string
+}
+
 variable "github_organization" {
   description = "GitHub Enterprise Cloud organisation name"
   type        = string
@@ -88,19 +93,9 @@ variable "prod_project_id" {
 variable "nonprod_roles" {
   description = "IAM roles to grant the nonprod SA on each non-prod project (dev, test, qa)"
   type        = list(string)
-  default = [
-    "roles/storage.admin",
-    "roles/cloudsql.admin",
-    "roles/compute.admin",
-  ]
 }
 
 variable "prod_roles" {
   description = "IAM roles to grant the prod SA on the prod project"
   type        = list(string)
-  default = [
-    "roles/storage.admin",
-    "roles/cloudsql.admin",
-    "roles/compute.admin",
-  ]
 }

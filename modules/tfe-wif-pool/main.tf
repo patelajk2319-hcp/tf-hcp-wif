@@ -21,9 +21,7 @@ resource "google_iam_workload_identity_pool" "pool" {
   workload_identity_pool_id = "hcp-tf-wif-${var.pool_env}"
   display_name              = "HCP Terraform WIF Pool (${var.pool_env})"
   description               = "Shared WIF pool for all ${var.pool_env} HCP Terraform projects"
-  disabled                  = false
-
-  depends_on = [google_project_service.required_apis]
+  depends_on                = [google_project_service.required_apis]
 }
 
 # The OIDC provider validates the JWT issued by HCP Terraform and maps its claims to GCP attributes.
@@ -33,7 +31,6 @@ resource "google_iam_workload_identity_pool_provider" "this" {
   workload_identity_pool_id          = google_iam_workload_identity_pool.pool.workload_identity_pool_id
   workload_identity_pool_provider_id = "hcp-terraform-oidc-${var.pool_env}"
   display_name                       = "HCP Terraform OIDC (${var.pool_env})"
-  disabled                           = false
 
   # JWT claims (right) mapped to GCP attributes (left) — attributes are used in the condition and SA bindings below.
   attribute_mapping = {

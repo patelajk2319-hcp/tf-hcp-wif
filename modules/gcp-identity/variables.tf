@@ -3,6 +3,11 @@ variable "app_name" {
   type        = string
 }
 
+variable "terraform_sa_project_id" {
+  description = "GCP project ID where the HCP Terraform agent service accounts are created (e.g. hcp-tf-sa)"
+  type        = string
+}
+
 variable "wif_gcp_project_id" {
   description = "GCP project ID hosting the WIF pools"
   type        = string

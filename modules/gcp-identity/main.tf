@@ -4,7 +4,7 @@ resource "google_project_service" "terraform_sa_project_apis" {
     "cloudresourcemanager.googleapis.com",
   ])
 
-  project            = local.terraform_sa_project_id
+  project            = var.terraform_sa_project_id
   service            = each.value
   disable_on_destroy = false
 }
@@ -14,14 +14,14 @@ resource "google_project_service" "terraform_sa_project_apis" {
 # Separate SAs per env ensure nonprod runs cannot access prod resources.
 
 resource "google_service_account" "nonprod" {
-  project      = local.terraform_sa_project_id
+  project      = var.terraform_sa_project_id
   account_id   = "${var.app_name}-agent-sa-nonprod"
   display_name = "${var.app_name} Terraform SA - NonProd"
   description  = "Used by the HCP Terraform agent to run Terraform for ${var.app_name} nonprod workspaces"
 }
 
 resource "google_service_account" "prod" {
-  project      = local.terraform_sa_project_id
+  project      = var.terraform_sa_project_id
   account_id   = "${var.app_name}-agent-sa-prod"
   display_name = "${var.app_name} Terraform SA - Prod"
   description  = "Used by the HCP Terraform agent to run Terraform for ${var.app_name} prod workspaces"

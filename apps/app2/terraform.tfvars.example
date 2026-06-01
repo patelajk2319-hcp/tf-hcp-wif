@@ -1,5 +1,9 @@
 tfc_organization = "my-org"
 
+# GCP projects
+terraform_sa_project_id = "hcp-tf-sa"
+wif_gcp_project_id      = "hcp-tf-wif"
+
 # GitHub Enterprise Cloud
 github_organization = "my-ghec-org"
 nonprod_team_slug   = "developers"
@@ -7,12 +11,11 @@ prod_team_slug      = "release-managers"
 repo_description    = "Infrastructure for app2"
 # repo_visibility   = "internal"   # default — internal is recommended for GHEC
 
-# GCP project IDs
+# App GCP project IDs
 dev_project_id  = "app2-dev"
 test_project_id = "app2-test"
 qa_project_id   = "app2-qa"
 prod_project_id = "app2-prod"
 
-# Optional — defaults to storage.admin, cloudsql.admin, compute.admin
-# nonprod_roles = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]
-# prod_roles    = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]
+nonprod_roles = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]
+prod_roles    = ["roles/storage.admin", "roles/cloudsql.admin", "roles/compute.admin"]

@@ -40,7 +40,6 @@ resource "github_branch_protection" "default" {
   }
 
   enforce_admins                  = true
-  restricts_pushes                = false
   require_conversation_resolution = true
 }
 

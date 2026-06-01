@@ -3,11 +3,6 @@ variable "app_name" {
   type        = string
 }
 
-variable "github_organization" {
-  description = "GitHub Enterprise Cloud organisation name"
-  type        = string
-}
-
 variable "repo_description" {
   description = "Short description for the GitHub repository"
   type        = string
