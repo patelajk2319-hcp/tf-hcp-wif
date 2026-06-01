@@ -1,7 +1,13 @@
-tfc_organization         = "my-org"
-nonprod_tfc_project_name = "REPLACE_ME_APPNAME-nonprod"
-prod_tfc_project_name    = "REPLACE_ME_APPNAME-prod"
+tfc_organization = "my-org"
 
+# GitHub Enterprise Cloud
+github_organization = "my-ghec-org"
+nonprod_team_slug   = "developers"
+prod_team_slug      = "release-managers"
+repo_description    = "Infrastructure for REPLACE_ME_APPNAME"
+# repo_visibility   = "internal"   # default — internal is recommended for GHEC
+
+# GCP project IDs
 dev_project_id  = "REPLACE_ME_APPNAME-dev"
 test_project_id = "REPLACE_ME_APPNAME-test"
 qa_project_id   = "REPLACE_ME_APPNAME-qa"

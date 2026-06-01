@@ -23,6 +23,12 @@ resource "tfe_workspace" "dev" {
   terraform_version = "~> 1.9"
   auto_apply        = false
   tag_names         = [var.app_name, "dev", "gke-agent"]
+
+  vcs_repo {
+    identifier     = "${var.github_organization}/${var.github_repo_name}"
+    oauth_token_id = var.oauth_token_id
+    branch         = "main"
+  }
 }
 
 resource "tfe_workspace" "test" {
@@ -32,6 +38,12 @@ resource "tfe_workspace" "test" {
   terraform_version = "~> 1.9"
   auto_apply        = false
   tag_names         = [var.app_name, "test", "gke-agent"]
+
+  vcs_repo {
+    identifier     = "${var.github_organization}/${var.github_repo_name}"
+    oauth_token_id = var.oauth_token_id
+    branch         = "main"
+  }
 }
 
 resource "tfe_workspace" "qa" {
@@ -41,6 +53,12 @@ resource "tfe_workspace" "qa" {
   terraform_version = "~> 1.9"
   auto_apply        = false
   tag_names         = [var.app_name, "qa", "gke-agent"]
+
+  vcs_repo {
+    identifier     = "${var.github_organization}/${var.github_repo_name}"
+    oauth_token_id = var.oauth_token_id
+    branch         = "main"
+  }
 }
 
 resource "tfe_workspace" "prod" {
@@ -50,6 +68,12 @@ resource "tfe_workspace" "prod" {
   terraform_version = "~> 1.9"
   auto_apply        = false
   tag_names         = [var.app_name, "prod", "gke-agent"]
+
+  vcs_repo {
+    identifier     = "${var.github_organization}/${var.github_repo_name}"
+    oauth_token_id = var.oauth_token_id
+    branch         = "main"
+  }
 }
 
 # ── Agent execution mode ──────────────────────────────────────────────────────

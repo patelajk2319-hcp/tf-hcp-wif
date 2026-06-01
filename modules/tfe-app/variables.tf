@@ -44,6 +44,21 @@ variable "prod_wif_provider_name" {
   type        = string
 }
 
+variable "github_organization" {
+  description = "GitHub Enterprise Cloud organisation name — used to build the VCS repo identifier"
+  type        = string
+}
+
+variable "github_repo_name" {
+  description = "GitHub repository name for this app — passed in from modules/github outputs"
+  type        = string
+}
+
+variable "oauth_token_id" {
+  description = "HCP Terraform OAuth token ID for the GitHub VCS connection"
+  type        = string
+}
+
 # Passed in from modules/gcp-identity outputs.
 variable "nonprod_sa_email" {
   description = "Email of the HCP Terraform agent SA for nonprod runs"

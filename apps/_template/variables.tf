@@ -1,3 +1,30 @@
+variable "github_organization" {
+  description = "GitHub Enterprise Cloud organisation name"
+  type        = string
+}
+
+variable "repo_description" {
+  description = "Short description for the GitHub repository"
+  type        = string
+  default     = ""
+}
+
+variable "repo_visibility" {
+  description = "Repository visibility: internal, private, or public"
+  type        = string
+  default     = "internal"
+}
+
+variable "nonprod_team_slug" {
+  description = "GitHub team slug granted push (write) access — typically your developers team"
+  type        = string
+}
+
+variable "prod_team_slug" {
+  description = "GitHub team slug granted maintain access — typically your release-managers team"
+  type        = string
+}
+
 variable "wif_gcp_project_id" {
   description = "GCP project ID hosting the WIF pools (hcp-tf-wif)"
   type        = string
