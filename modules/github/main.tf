@@ -58,37 +58,3 @@ resource "github_team_repository" "prod" {
   # Maintain access for release/hotfix operations but not admin — keeps admin surface small.
   permission = "maintain"
 }
-
-# ── Actions secrets — HCP Terraform workspace IDs ────────────────────────────
-# Stored as secrets (not plain vars) because workspace IDs are internal TFC resource
-# identifiers that should not appear in public PR logs.
-
-resource "github_actions_secret" "tfc_organization" {
-  repository      = github_repository.this.name
-  secret_name     = "TFC_ORGANIZATION"
-  plaintext_value = var.tfc_organization
-}
-
-resource "github_actions_secret" "dev_workspace_id" {
-  repository      = github_repository.this.name
-  secret_name     = "TFC_WORKSPACE_ID_DEV"
-  plaintext_value = var.dev_workspace_id
-}
-
-resource "github_actions_secret" "test_workspace_id" {
-  repository      = github_repository.this.name
-  secret_name     = "TFC_WORKSPACE_ID_TEST"
-  plaintext_value = var.test_workspace_id
-}
-
-resource "github_actions_secret" "qa_workspace_id" {
-  repository      = github_repository.this.name
-  secret_name     = "TFC_WORKSPACE_ID_QA"
-  plaintext_value = var.qa_workspace_id
-}
-
-resource "github_actions_secret" "prod_workspace_id" {
-  repository      = github_repository.this.name
-  secret_name     = "TFC_WORKSPACE_ID_PROD"
-  plaintext_value = var.prod_workspace_id
-}
